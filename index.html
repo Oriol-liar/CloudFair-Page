@@ -1,28 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pixel Art Studio</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Zapatillas</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Pixel Art Studio</h1>
-  </header>
-  <main>
-    <section id="studio">
-      <div class="controls">
-        <label for="colorPicker">Color:</label>
-        <input type="color" id="colorPicker" value="#000000">
-        <button id="clearButton">Limpiar</button>
-      </div>
-      <canvas id="canvas" width="320" height="320"></canvas>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2025 Pixel Art Studio</p>
-  </footer>
-  <script src="script.js"></script>
+    <header>
+        <h1>Tienda de Zapatillas</h1>
+    </header>
+    <main>
+        <section id="productos" class="container">
+            <div class="producto">
+                <img src="https://via.placeholder.com/200" alt="Zapatilla AirX">
+                <h2>AirX</h2>
+                <p class="descripcion">Zapatillas deportivas ligeras para uso diario.</p>
+                <span class="precio" data-precio="120">$120</span>
+                <button class="btnAgregar" data-producto="AirX" data-precio="120">Agregar al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="https://via.placeholder.com/200" alt="Zapatilla Runner">
+                <h2>Runner</h2>
+                <p class="descripcion">Diseñadas para correr largas distancias.</p>
+                <span class="precio" data-precio="140">$140</span>
+                <button class="btnAgregar" data-producto="Runner" data-precio="140">Agregar al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="https://via.placeholder.com/200" alt="Zapatilla Street">
+                <h2>Street</h2>
+                <p class="descripcion">El estilo urbano que necesitas en tu armario.</p>
+                <span class="precio" data-precio="100">$100</span>
+                <button class="btnAgregar" data-producto="Street" data-precio="100">Agregar al carrito</button>
+            </div>
+        </section>
+        <aside id="carrito">
+            <h3>Carrito</h3>
+            <p id="carrito-items">0 artículos</p>
+        </aside>
+    </main>
+    <footer>
+        <p>&copy; 2024 Tienda de Zapatillas</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>

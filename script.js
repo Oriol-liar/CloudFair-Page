@@ -1,22 +1,20 @@
-const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
-const colorPicker = document.getElementById('colorPicker');
-const clearButton = document.getElementById('clearButton');
-const pixelSize = 20;
+const cart = {
+    items: [],
+    add(product, price) {
+        this.items.push({product, price: Number(price)});
+        this.updateDisplay();
+    },
+    updateDisplay() {
+        const display = document.getElementById('carrito-items');
+        const count = this.items.length;
+        display.textContent = `${count} ${count === 1 ? 'art\u00edculo' : 'art\u00edculos'}`;
+    }
+};
 
-function draw(e) {
-  const rect = canvas.getBoundingClientRect();
-  const x = Math.floor((e.clientX - rect.left) / pixelSize);
-  const y = Math.floor((e.clientY - rect.top) / pixelSize);
-  ctx.fillStyle = colorPicker.value;
-  ctx.fillRect(x * pixelSize, y * pixelSize, pixelSize, pixelSize);
-}
-
-canvas.addEventListener('mousedown', draw);
-canvas.addEventListener('mousemove', (e) => {
-  if (e.buttons) draw(e);
-});
-
-clearButton.addEventListener('click', () => {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+document.querySelectorAll('.btnAgregar').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const product = btn.dataset.producto;
+        const price = btn.dataset.precio;
+        cart.add(product, price);
+    });
 });
